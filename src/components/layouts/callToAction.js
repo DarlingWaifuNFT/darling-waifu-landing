@@ -25,7 +25,7 @@ const CTA = () => {
           >
             <div className="flex flex-row">
               <img src={lock} alt="Founder pass" className="mr-4" />
-              <div>Litepaper</div>
+              <div>Founder Pass</div>
             </div>
           </Button>
           <Button
