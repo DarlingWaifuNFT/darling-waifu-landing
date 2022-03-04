@@ -20,12 +20,12 @@ const CTA = () => {
       <div className="w-full flex flex-col space-y-4 content-center items-center justify-center">
         <div className="-px-4 flex flex-row space-x-4 content-center items-center justify-center">
           <Button
-            link="https://founders.darlingwaifu.com"
-            title="Buy our passes"
+            link="https://presale.darlingwaifu.com"
+            title="Buy in presale"
           >
             <div className="flex flex-row">
-              <img src={lock} alt="Founder pass" className="mr-4" />
-              <div>Founder Pass</div>
+              <img src={lock} alt="Presale" className="mr-4" />
+              <div>Founder presale</div>
             </div>
           </Button>
           <Button
