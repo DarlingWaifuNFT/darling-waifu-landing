@@ -38,6 +38,17 @@ const CTA = () => {
             </div>
           </Button>
         </div>
+        <div className="-px-4 flex flex-row space-x-4 content-center items-center justify-center">
+          <Button
+            link="https://ido.darlingwaifu.com"
+            title="Get your tokens before the ido"
+          >
+            <div className="flex flex-row">
+              <img src={lock} alt="IDO sale" className="mr-4" />
+              <div>IDO Sale</div>
+            </div>
+          </Button>
+        </div>
       </div>
     </div>
   );
