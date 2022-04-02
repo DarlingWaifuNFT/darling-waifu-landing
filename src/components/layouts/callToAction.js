@@ -39,7 +39,7 @@ const CTA = () => {
           </Button>
         </div>
         <div className="-px-4 flex flex-row space-x-4 content-center items-center justify-center">
-          <Button
+          {/*<Button
             link="https://ido.darlingwaifu.com"
             title="Get your tokens before the ido"
           >
@@ -47,7 +47,7 @@ const CTA = () => {
               <img src={lock} alt="IDO sale" className="mr-4" />
               <div>IDO Sale</div>
             </div>
-          </Button>
+          </Button>*/}
           <Button
             link="https://calculator.darlingwaifu.com"
             title="Calculate your commissions"
