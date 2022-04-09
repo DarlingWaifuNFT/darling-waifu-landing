@@ -14,6 +14,7 @@ module.exports = {
       colors: {
         primarypeach: "#F0C1DC",
         primaryskyblue: "#ABEEFC",
+        softpink: "#FDEAF1",
         bordergray: "#4A4B5A",
         almostwhite: "#FFE9F4",
       },
