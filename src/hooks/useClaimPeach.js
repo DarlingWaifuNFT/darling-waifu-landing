@@ -6,7 +6,6 @@ export default function useClaimPeach() {
 
     const { library, activate, account, chainId, active, networkId, error } = useWeb3React()
     const [contract, setContract] = useState(null)
-    const [claimActive, setClaimActive] = useState(false)
     const [claimeable, setClaimeable] = useState(0)
 
 
@@ -14,24 +13,24 @@ export default function useClaimPeach() {
 
     useEffect(() => {
 
-        if (account && chainId !== 56) {
-            window.ethereum.request({
-                method: "wallet_addEthereumChain",
-                params: [
-                    {
-                        chainId: `0x38`,
-                        chainName: "Binance Smart Chain",
-                        nativeCurrency: {
-                            name: "Binance Coin",
-                            symbol: "BNB",
-                            decimals: 18
-                        },
-                        rpcUrls: ['https://bsc-dataseed.binance.org/'],
-                        blockExplorerUrls: ['https://bscscan.com']
-                    }
-                ]
-            });
-        }
+
+        window.ethereum.request({
+            method: "wallet_addEthereumChain",
+            params: [
+                {
+                    chainId: `0x38`,
+                    chainName: "Binance Smart Chain",
+                    nativeCurrency: {
+                        name: "Binance Coin",
+                        symbol: "BNB",
+                        decimals: 18
+                    },
+                    rpcUrls: ['https://bsc-dataseed.binance.org/'],
+                    blockExplorerUrls: ['https://bscscan.com']
+                }
+            ]
+        });
+
 
     }, [chainId])
 
@@ -39,18 +38,36 @@ export default function useClaimPeach() {
     const connectContractClaim = async () => {
 
         let contractClaim = await connectContract("0x31C79a0Dfeb60Ef25c61d8160db045a2f168407A", library)
-
         setContract(contractClaim)
         getClaimableToken(contractClaim)
     }
 
-    const connectToMetamask = () => { activate(injected) }
+    const connectToMetamask = () => {
+        activate(injected)
+
+        window.ethereum.request({
+            method: "wallet_addEthereumChain",
+            params: [
+                {
+                    chainId: `0x38`,
+                    chainName: "Binance Smart Chain",
+                    nativeCurrency: {
+                        name: "Binance Coin",
+                        symbol: "BNB",
+                        decimals: 18
+                    },
+                    rpcUrls: ['https://bsc-dataseed.binance.org/'],
+                    blockExplorerUrls: ['https://bscscan.com']
+                }
+            ]
+        });
+    }
+
 
 
     const getClaimableToken = async (contractClaim) => {
         let tempClaimeable = await contractClaim.methods.claimable(account).call({ from: account })
         setClaimeable(tempClaimeable / 10 ** 18)
-        setClaimActive(true)
     }
 
     const claimTokens = async () => {
@@ -72,6 +89,6 @@ export default function useClaimPeach() {
 
 
 
-    return { connectToMetamask, claimeable, claimActive, claimTokens, account }
+    return { connectToMetamask, claimeable, claimTokens, account }
 
 }
