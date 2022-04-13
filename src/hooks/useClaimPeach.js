@@ -14,7 +14,7 @@ export default function useClaimPeach() {
     useEffect(() => {
 
 
-        window.ethereum.request({
+        window.ethereum?.request({
             method: "wallet_addEthereumChain",
             params: [
                 {
@@ -45,7 +45,7 @@ export default function useClaimPeach() {
     const connectToMetamask = () => {
         activate(injected)
 
-        window.ethereum.request({
+        window.ethereum?.request({
             method: "wallet_addEthereumChain",
             params: [
                 {

@@ -5,7 +5,7 @@ const Countdown = () => {
     const DataNumber = ({ children }) => (<div className="bg-softpink py-2 text-sm md:text-2xl text-center font-bold rounded-lg shadow-2xl bg-[url('./background')]"><div className="flex flex-col">{children}</div></div>);
 
     const startTime = () => {
-        const timerData = new Date("April 17, 2022").getTime();
+        const timerData = new Date("2022-04-17T00:00:00Z").getTime();
 
         const intTimer = setInterval(() => {
             const nowData = new Date().getTime();
