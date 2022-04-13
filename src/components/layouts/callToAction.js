@@ -1,11 +1,18 @@
 import React from "react";
 import Button from "../elements/button";
+import ButtonOnClick from "../elements/buttonOnClick";
 import Countdown from "../elements/countdown";
 import lock from "../../assets/vector/lock.svg";
 import paper from "../../assets/vector/paper.svg";
 import isologo from "../../assets/vector/isologo.svg";
 
+import useClaimPeach from "../../hooks/useClaimPeach";
+
 const CTA = () => {
+
+  const { connectToMetamask, claimeable, claimActive } = useClaimPeach()
+
+
   return (
     <div className="absolute lg:relative top-0 left-0 w-full lg:w-1/2 flex flex-col items-center mx-auto my-auto h-full pt-third md:pt-32 lg:pt-32 md:px-8 lg:px-6">
       <Countdown />
@@ -59,6 +66,19 @@ const CTA = () => {
               <div>Calculator</div>
             </div>
           </Button>
+          {/*  {claimActive
+            ? <ButtonOnClick click={connectToMetamask} title="Calculate your commissions" >
+              <div className="flex flex-row">
+                <img src={paper} alt="Calculator" className="mr-4" />
+                <div>Claim {claimeable} PEACH</div>
+              </div>
+            </ButtonOnClick>
+            : <ButtonOnClick click={connectToMetamask} title="Calculate your commissions">
+              <div className="flex flex-row">
+                <img src={paper} alt="Calculator" className="mr-4" />
+                <div>Connect to Metamask</div>
+              </div>
+            </ButtonOnClick>} */}
         </div>
       </div>
     </div>

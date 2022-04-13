@@ -6,8 +6,12 @@
   "author": "Franco Ramirez (fredrare.com)",
   "license": "GPL 2",
   "dependencies": {
+    "@loadable/component": "^5.15.2",
+    "@web3-react/core": "^6.1.9",
+    "@web3-react/injected-connector": "^6.0.7",
     "autoprefixer": "^10.4.0",
     "dotenv": "^10.0.0",
+    "electron": "^18.0.3",
     "env": "^0.0.2",
     "gatsby": "^4.2.0",
     "gatsby-cli": "^4.2.0",
@@ -28,7 +32,8 @@
     "react-tsparticles": "^1.37.3",
     "tailwindcss": "^2.2.19",
     "use-sound": "^4.0.1",
-    "web-vitals": "^1.0.1"
+    "web-vitals": "^1.0.1",
+    "web3": "^1.7.3"
   },
   "scripts": {
     "start": "gatsby develop",
