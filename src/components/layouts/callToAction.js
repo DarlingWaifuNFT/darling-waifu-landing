@@ -66,20 +66,23 @@ const CTA = () => {
               <div>Calculator</div>
             </div>
           </Button>
-          {/* {(claimActive && account)
+          {account
             ? <ButtonOnClick click={claimTokens} title="Calculate your commissions" >
               <div className="flex flex-row">
                 <img src={paper} alt="Calculator" className="mr-4" />
                 <div>Claim {claimeable} PEACH</div>
               </div>
             </ButtonOnClick>
-            : <>  {!account && <ButtonOnClick click={connectToMetamask} title="Calculate your commissions">
+            : <ButtonOnClick click={connectToMetamask} title="Calculate your commissions">
               <div className="flex flex-row">
                 <img src={paper} alt="Calculator" className="mr-4" />
-                <div>Wallet</div>
+                <div>Wallet {account}</div>
               </div>
-            </ButtonOnClick>} </>}
-          {console.log(claimActive, account)} */}
+            </ButtonOnClick>}
+
+
+          {console.log(account)}
+
         </div>
       </div>
     </div>
