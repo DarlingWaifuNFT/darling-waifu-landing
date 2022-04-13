@@ -5,6 +5,7 @@ import Countdown from "../elements/countdown";
 import lock from "../../assets/vector/lock.svg";
 import paper from "../../assets/vector/paper.svg";
 import isologo from "../../assets/vector/isologo.svg";
+import { FaWallet } from 'react-icons/fa';
 
 import useClaimPeach from "../../hooks/useClaimPeach";
 
@@ -66,20 +67,20 @@ const CTA = () => {
               <div>Calculator</div>
             </div>
           </Button>
-          {/* {(claimActive && account)
+          {(claimActive && account)
             ? <ButtonOnClick click={claimTokens} title="Calculate your commissions" >
               <div className="flex flex-row">
-                <img src={paper} alt="Calculator" className="mr-4" />
+                <FaWallet className="mr-4" />
                 <div>Claim {claimeable} PEACH</div>
               </div>
             </ButtonOnClick>
             : <>  {!account && <ButtonOnClick click={connectToMetamask} title="Calculate your commissions">
               <div className="flex flex-row">
-                <img src={paper} alt="Calculator" className="mr-4" />
+                <FaWallet className="mr-4" />
                 <div>Wallet</div>
               </div>
             </ButtonOnClick>} </>}
-          {console.log(claimActive, account)} */}
+          {console.log(claimActive, account)}
         </div>
       </div>
     </div>

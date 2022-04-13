@@ -22,7 +22,7 @@ const Countdown = () => {
         }, 1000);
     }
 
-    useEffect(startTime);
+    useEffect(() => { startTime() }, []);
 
 
     return <div className="grid grid-cols-4 gap-x-1 md:gap-x-6 w-hexye md:w-hexyf lg:w-full text-center items-center justify-center mb-6">
