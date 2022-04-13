@@ -10,7 +10,7 @@ import useClaimPeach from "../../hooks/useClaimPeach";
 
 const CTA = () => {
 
-  const { connectToMetamask, claimeable, claimActive } = useClaimPeach()
+  const { connectToMetamask, claimeable, claimActive, claimTokens, account } = useClaimPeach()
 
 
   return (
@@ -66,19 +66,20 @@ const CTA = () => {
               <div>Calculator</div>
             </div>
           </Button>
-          {/*  {claimActive
-            ? <ButtonOnClick click={connectToMetamask} title="Calculate your commissions" >
+          {/* {(claimActive && account)
+            ? <ButtonOnClick click={claimTokens} title="Calculate your commissions" >
               <div className="flex flex-row">
                 <img src={paper} alt="Calculator" className="mr-4" />
                 <div>Claim {claimeable} PEACH</div>
               </div>
             </ButtonOnClick>
-            : <ButtonOnClick click={connectToMetamask} title="Calculate your commissions">
+            : <>  {!account && <ButtonOnClick click={connectToMetamask} title="Calculate your commissions">
               <div className="flex flex-row">
                 <img src={paper} alt="Calculator" className="mr-4" />
-                <div>Connect to Metamask</div>
+                <div>Wallet</div>
               </div>
-            </ButtonOnClick>} */}
+            </ButtonOnClick>} </>}
+          {console.log(claimActive, account)} */}
         </div>
       </div>
     </div>
