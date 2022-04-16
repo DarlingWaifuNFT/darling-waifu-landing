@@ -12,26 +12,24 @@ export default function useClaimPeach() {
     useEffect(() => { if (account) connectContractClaim() }, [library, account, chainId])
 
     useEffect(() => {
-
-
-        window.ethereum.request({
-            method: "wallet_addEthereumChain",
-            params: [
-                {
-                    chainId: `0x38`,
-                    chainName: "Binance Smart Chain",
-                    nativeCurrency: {
-                        name: "Binance Coin",
-                        symbol: "BNB",
-                        decimals: 18
-                    },
-                    rpcUrls: ['https://bsc-dataseed.binance.org/'],
-                    blockExplorerUrls: ['https://bscscan.com']
-                }
-            ]
-        });
-
-
+        if (chainId !== 56) {
+            window.ethereum.request({
+                method: "wallet_addEthereumChain",
+                params: [
+                    {
+                        chainId: `0x38`,
+                        chainName: "Binance Smart Chain",
+                        nativeCurrency: {
+                            name: "Binance Coin",
+                            symbol: "BNB",
+                            decimals: 18
+                        },
+                        rpcUrls: ['https://bsc-dataseed.binance.org/'],
+                        blockExplorerUrls: ['https://bscscan.com']
+                    }
+                ]
+            });
+        }
     }, [chainId])
 
 
@@ -74,20 +72,11 @@ export default function useClaimPeach() {
 
         try {
             if (account && claimeable.toString() !== "0") {
-
                 await contract.methods.claim().send({ from: account, value: 1 + '0'.repeat(15) })
                 setClaimeable("0")
             }
-        } catch (error) {
-            console.log(error)
-
-        }
-
-
-
+        } catch (error) { console.log(error) }
     }
-
-
 
     return { connectToMetamask, claimeable, claimTokens, account }
 

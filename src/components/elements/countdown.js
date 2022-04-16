@@ -5,7 +5,7 @@ const Countdown = () => {
     const DataNumber = ({ children }) => (<div className="bg-softpink py-2 text-sm md:text-2xl text-center font-bold rounded-lg shadow-2xl bg-[url('./background')]"><div className="flex flex-col">{children}</div></div>);
 
     const startTime = () => {
-        const timerData = new Date("April 17, 2022").getTime();
+        const timerData = new Date("2022-04-17T00:00:00Z").getTime();
 
         const intTimer = setInterval(() => {
             const nowData = new Date().getTime();
@@ -22,7 +22,7 @@ const Countdown = () => {
         }, 1000);
     }
 
-    useEffect(startTime);
+    useEffect(() => { startTime() }, []);
 
 
     return <div className="grid grid-cols-4 gap-x-1 md:gap-x-6 w-hexye md:w-hexyf lg:w-full text-center items-center justify-center mb-6">

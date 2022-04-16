@@ -80,9 +80,6 @@ const CTA = () => {
               </div>
             </ButtonOnClick>}
 
-
-          {console.log(account)}
-
         </div>
       </div>
     </div>
