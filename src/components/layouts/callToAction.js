@@ -28,8 +28,8 @@ const CTA = () => {
       </div>
       <div className="w-full flex flex-col space-y-4 content-center items-center justify-center">
         {counter <= 0 && <div className="-px-4 flex flex-row space-x-4 content-center items-center justify-center">
-          <Button link="https://beta.darlingwaifu.com" title="Try the Darling Waifu beta">
-              <div>Buy PEACH</div>
+          <Button link="https://www.pinksale.finance/#/launchpad/0x9388bFF3a9Dc5cbFA5960A0ce555e51E2f3213AE" title="Buy Peach Now">
+              <div>Buy Peach Now</div>
             </Button>
           </div>}
         <div className="-px-4 flex flex-row space-x-4 content-center items-center justify-center">
