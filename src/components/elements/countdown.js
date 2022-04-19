@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const Countdown = () => {
+const Countdown = ({setCounter}) => {
     const [dataObj, setDataObj] = useState({})
     const DataNumber = ({ children }) => (<div className="bg-softpink py-2 text-sm md:text-2xl text-center font-bold rounded-lg shadow-2xl bg-[url('./background')]"><div className="flex flex-col">{children}</div></div>);
 
@@ -10,6 +10,7 @@ const Countdown = () => {
         const intTimer = setInterval(() => {
             const nowData = new Date().getTime();
             const diffData = timerData - nowData;
+            setCounter(diffData)
 
             const countData = {
                 Days: Math.floor(diffData / (24 * 60 * 60 * 1000)),

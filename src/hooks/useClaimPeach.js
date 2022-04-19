@@ -13,7 +13,7 @@ export default function useClaimPeach() {
 
     useEffect(() => {
         if (chainId !== 56) {
-            window.ethereum.request({
+            window.ethereum?.request({
                 method: "wallet_addEthereumChain",
                 params: [
                     {
@@ -43,7 +43,7 @@ export default function useClaimPeach() {
     const connectToMetamask = () => {
         activate(injected)
 
-        window.ethereum.request({
+        window.ethereum?.request({
             method: "wallet_addEthereumChain",
             params: [
                 {
