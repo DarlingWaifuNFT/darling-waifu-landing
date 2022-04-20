@@ -4,8 +4,10 @@ import ButtonOnClick from "../elements/buttonOnClick";
 import lock from "../../assets/vector/lock.svg";
 import paper from "../../assets/vector/paper.svg";
 import isologo from "../../assets/vector/isologo.svg";
+import PlayGame from "../../assets/vector/PlayGame.svg";
 import soldOutIcon from "../../assets/img/soldOut.png";
 import { FaWallet } from 'react-icons/fa';
+import { IoLogoGameControllerB } from 'react-icons/io';
 
 import useClaimPeach from "../../hooks/useClaimPeach";
 
@@ -25,13 +27,23 @@ const CTA = () => {
         Play to Business NFT
       </div>
       <div className="w-full flex flex-col space-y-4 content-center items-center justify-center">
+        {/* <Button
+          special
+          link="https://beta.darlingwaifu.com"
+          title="Calculate your commissions"
+        >
+          <div className="flex flex-row items-center ">
+            <IoLogoGameControllerB size={"30px"} className="mr-4" />
+            <div>Play Game</div>
+          </div>
+        </Button> */}
         <div className="-px-4 flex flex-row space-x-4 content-center items-center justify-center">
-          <div className="absolute rotate-45 w-44 lg:w-56 z-50"><img src={soldOutIcon} alt="" /></div>
-          <Button link="/" title="Buy Peach Now">
+          <Button link="https://poocoin.app/tokens/0x6d76f8a9f1500add43a3991f17820d6788a12f23" title="Buy Peach Now">
             <div>Buy Peach Now</div>
           </Button>
         </div>
         <div className="-px-4 flex flex-row space-x-4 content-center items-center justify-center">
+
           <Button
             link="https://beta.darlingwaifu.com"
             title="Try the Darling Waifu beta"

@@ -31,6 +31,7 @@
     "react-scripts": "4.0.3",
     "react-tsparticles": "^1.37.3",
     "tailwindcss": "^2.2.19",
+    "toast": "^0.3.47",
     "use-sound": "^4.0.1",
     "web-vitals": "^1.0.1",
     "web3": "^1.7.3"

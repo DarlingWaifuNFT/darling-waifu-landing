@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import buttonSounds from "../../assets/music/button.mp3";
 import useSound from "use-sound";
 
-const Button = ({ link, children, title }) => {
+const Button = ({ link, children, title, special }) => {
   const [canPlay, setCanPlay] = useState(false);
   const [play, { stop }] = useSound(buttonSounds, {
     sprite: {
@@ -19,7 +19,7 @@ const Button = ({ link, children, title }) => {
       target={link ? "_blank" : ""}
       rel="noreferrer"
       title={title}
-      className={`h-12 px-6 py-3 text-center bg-gradient-to-b from-primaryskyblue to-primarypeach
+      className={`h-12 px-4 py-3 text-center bg-gradient-to-b ${special ? "from-primarySpeacialpeach to-primarySpecialskyblue " : "from-primaryskyblue to-primarypeach"} 
         rounded-full border border-bordergray shadow-button transition duration-100 transform hover:scale-105 active:scale-95
         active:shadow-buttonpressed
         font-bold`}
