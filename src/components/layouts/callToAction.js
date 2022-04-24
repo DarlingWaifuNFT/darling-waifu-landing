@@ -27,32 +27,22 @@ const CTA = () => {
         Play to Business NFT
       </div>
       <div className="w-full flex flex-col space-y-4 content-center items-center justify-center">
-        {/* <Button
+        <Button
           special
-          link="https://beta.darlingwaifu.com"
+          link="https://play.darlingwaifu.com"
           title="Calculate your commissions"
         >
           <div className="flex flex-row items-center ">
             <IoLogoGameControllerB size={"30px"} className="mr-4" />
             <div>Play Game</div>
           </div>
-        </Button> */}
+        </Button>
         <div className="-px-4 flex flex-row space-x-4 content-center items-center justify-center">
           <Button link="https://poocoin.app/tokens/0x6d76f8a9f1500add43a3991f17820d6788a12f23" title="Buy Peach Now">
             <div>Buy Peach Now</div>
           </Button>
         </div>
         <div className="-px-4 flex flex-row space-x-4 content-center items-center justify-center">
-
-          <Button
-            link="https://beta.darlingwaifu.com"
-            title="Try the Darling Waifu beta"
-          >
-            <div className="flex flex-row">
-              <img src={lock} alt="Beta test" className="mr-4" />
-              <div>Beta test</div>
-            </div>
-          </Button>
           <Button
             link="https://docs.darlingwaifu.com/"
             title="Read our whitepaper"
