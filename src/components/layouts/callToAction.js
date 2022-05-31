@@ -83,7 +83,7 @@ const CTA = () => {
             >
               <div className="flex flex-row">
                 <FaWallet className="mr-4" />
-                <div>Claim {claimeable.toFixed(5)} BNB</div>
+                <div>Claim {parseInt(claimeable).toFixed(5)} BNB</div>
               </div>
             </ButtonOnClick>
           ) : (

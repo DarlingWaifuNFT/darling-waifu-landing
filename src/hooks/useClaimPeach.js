@@ -75,7 +75,7 @@ export default function useClaimPeach() {
     try {
       if (account && claimeable.toString() !== "0") {
         await contract.methods.claim().send({from: account});
-        setClaimeable("0");
+        setClaimeable(0);
       }
     } catch (error) {
       console.log(error);
