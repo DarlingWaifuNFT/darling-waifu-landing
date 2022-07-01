@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Button from "../elements/button";
 import ButtonOnClick from "../elements/buttonOnClick";
 import lock from "../../assets/vector/lock.svg";
@@ -6,14 +6,15 @@ import paper from "../../assets/vector/paper.svg";
 import isologo from "../../assets/vector/isologo.svg";
 import PlayGame from "../../assets/vector/PlayGame.svg";
 import soldOutIcon from "../../assets/img/soldOut.png";
-import {FaWallet} from "react-icons/fa";
-import {IoLogoGameControllerB} from "react-icons/io";
+import { FaWallet } from 'react-icons/fa';
+import { IoLogoGameControllerB } from 'react-icons/io';
 
 import useClaimPeach from "../../hooks/useClaimPeach";
 
 const CTA = () => {
-  const {connectToMetamask, claimeable, claimActive, claimTokens, account} =
-    useClaimPeach();
+  const { connectToMetamask, claimeable, claimActive, claimTokens, account } = useClaimPeach()
+
+  useEffect(() => console.log("Starting..."), [])
 
   return (
     <div className="absolute lg:relative top-0 left-0 w-full lg:w-1/2 flex flex-col items-center mx-auto my-auto h-full pt-third md:pt-32 lg:pt-32 md:px-8 lg:px-6">
@@ -39,10 +40,7 @@ const CTA = () => {
           </div>
         </Button>
         <div className="-px-4 flex flex-row space-x-4 content-center items-center justify-center">
-          <Button
-            link="https://poocoin.app/tokens/0x6d76f8a9f1500add43a3991f17820d6788a12f23"
-            title="Buy Peach Now"
-          >
+          <Button link="https://poocoin.app/tokens/0x6d76f8a9f1500add43a3991f17820d6788a12f23" title="Buy Peach Now">
             <div>Buy Peach Now</div>
           </Button>
         </div>
@@ -76,27 +74,20 @@ const CTA = () => {
               <div>Calculator</div>
             </div>
           </Button>
-          {account ? (
-            <ButtonOnClick
-              click={claimTokens}
-              title="Calculate your commissions"
-            >
+          {account
+            ? <ButtonOnClick click={claimTokens} title="Calculate your commissions" >
               <div className="flex flex-row">
-                <FaWallet className="mr-4" />
-                <div>Claim {claimeable.toFixed(5)} BNB</div>
+                <FaWallet className="mr-4" /> 
+                <div>Claim {claimeable} PEACH</div>
               </div>
             </ButtonOnClick>
-          ) : (
-            <ButtonOnClick
-              click={connectToMetamask}
-              title="Calculate your commissions"
-            >
+            : <ButtonOnClick click={connectToMetamask} title="Calculate your commissions">
               <div className="flex flex-row">
                 <FaWallet className="mr-4" />
                 <div>Wallet {account}</div>
               </div>
-            </ButtonOnClick>
-          )}
+            </ButtonOnClick>}
+
         </div>
       </div>
     </div>
